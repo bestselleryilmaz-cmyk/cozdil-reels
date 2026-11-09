@@ -1,0 +1,119 @@
+{
+ "pairs": [
+  [
+   "Geri çekilin!",
+   "Get back!",
+   "am_michael"
+  ],
+  [
+   "Üç, iki, bir…",
+   "Three, two, one…",
+   "am_michael"
+  ],
+  [
+   "İşte gidiyor!",
+   "Here it goes!",
+   "af_heart"
+  ],
+  [
+   "Aman Tanrım, yıkılıyor!",
+   "Oh my God, it's falling!",
+   "af_heart"
+  ],
+  [
+   "Şuna bak!",
+   "Look at that!",
+   "am_michael"
+  ],
+  [
+   "Bunu gördün mü?!",
+   "Did you see that?!",
+   "af_heart"
+  ],
+  [
+   "Bu inanılmazdı!",
+   "That was insane!",
+   "am_michael"
+  ]
+ ],
+ "src_a": 3.3,
+ "src_freeze": 8.1,
+ "hook1": [
+  [
+   "BU BİNA",
+   "w",
+   0.2
+  ],
+  [
+   "3 SANİYE SONRA",
+   "w",
+   0.65
+  ],
+  [
+   "YAN YATACAK",
+   "y",
+   1.15
+  ]
+ ],
+ "hook2": [
+  [
+   "BU ANDA",
+   "w",
+   0.05
+  ],
+  [
+   "İNGİLİZCE",
+   "y",
+   0.35
+  ],
+  [
+   "NE BAĞIRILIR?",
+   "y",
+   0.65
+  ]
+ ],
+ "fin_src0": 3.3,
+ "fin_src1": 14.0,
+ "fin_caps": [
+  [
+   4.6,
+   6.6,
+   "Three, two, one…",
+   "Üç, iki, bir…"
+  ],
+  [
+   6.75,
+   7.9,
+   "Here it goes!",
+   "İşte gidiyor!"
+  ],
+  [
+   7.9,
+   9.6,
+   "Oh my God, it's falling!",
+   "Aman Tanrım, yıkılıyor!"
+  ],
+  [
+   9.6,
+   11.6,
+   "Did you see that?!",
+   "Bunu gördün mü?!"
+  ],
+  [
+   11.6,
+   14.0,
+   "That was insane!",
+   "Bu inanılmazdı!"
+  ]
+ ],
+ "question_at": 12.0,
+ "src_url": "https://upload.wikimedia.org/wikipedia/commons/6/67/Radio_Network_House_implosion.ogv",
+ "out_name": "test_bina.mp4",
+ "panel_yc": 0.4,
+ "loop_len": 6.3,
+ "_meta": {
+  "title": "File:Radio Network House implosion.ogv",
+  "license": "CC BY-SA 3.0",
+  "artist": "Schwede66"
+ }
+}

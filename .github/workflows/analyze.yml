@@ -1,0 +1,42 @@
+name: analyze
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "search | sheets | fine"
+        required: true
+      args:
+        description: 'JSON list of string arguments, e.g. ["implosion","avalanche"]'
+        required: true
+permissions:
+  contents: write
+concurrency:
+  group: repo-writes
+  cancel-in-progress: false
+jobs:
+  analyze:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.11" }
+      - run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
+      - run: pip install -q httpx==0.28.1 pillow==11.3.0
+      - name: run
+        env:
+          MODE: ${{ inputs.mode }}
+          ARGS: ${{ inputs.args }}
+        run: |
+          python - <<'EOF'
+          import json, os, subprocess, sys
+          a = json.loads(os.environ["ARGS"])
+          subprocess.run([sys.executable, "tools/commons.py", os.environ["MODE"], *[str(x) for x in a]], check=True)
+          EOF
+      - name: commit
+        run: |
+          git config user.name "cozdil-bot"
+          git config user.email "cozdil-bot@users.noreply.github.com"
+          git add analysis
+          git diff --cached --quiet || git commit -m "analysis: ${{ inputs.mode }}"
+          for i in 1 2 3; do git pull --rebase -q && git push -q && break; sleep 5; done
